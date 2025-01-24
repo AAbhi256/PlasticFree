@@ -1,9 +1,11 @@
 import { SIK } from "SpectaclesInteractionKit/SIK";
 import { CropRegion } from "./CropRegion";
-import { ChatGPT } from "./ChatGPT";
+import { PlasticDetection } from "./PlasticDetection";
 import { CaptionBehavior } from "./CaptionBehavior";
+import { WebView } from "../Web View/WebView";
 
 const BOX_MIN_SIZE = 8; //min size in cm for image capture
+
 
 @component
 export class PictureBehavior extends BaseScriptComponent {
@@ -14,11 +16,13 @@ export class PictureBehavior extends BaseScriptComponent {
   @input captureRendMesh: RenderMeshVisual;
   @input screenCropTexture: Texture;
   @input cropRegion: CropRegion;
-  @input chatGPT: ChatGPT;
+  @input plasticDetection: PlasticDetection;
   @input caption: CaptionBehavior;
+  @input webView: WebView;
+    
 
   private isEditor = global.deviceInfoSystem.isEditor();
-
+ 
   private camTrans: Transform;
   private loadingTrans: Transform;
 
@@ -67,7 +71,7 @@ export class PictureBehavior extends BaseScriptComponent {
         this.cropRegion.enabled = false;
         this.captureRendMesh.mainPass.captureImage =
           ProceduralTextureProvider.createFromTexture(this.screenCropTexture);
-        this.chatGPT.makeImageRequest(
+        this.plasticDetection.makeImageRequest(
           this.captureRendMesh.mainPass.captureImage,
           (response) => {
             this.loadingObj.enabled = false;
@@ -110,8 +114,10 @@ export class PictureBehavior extends BaseScriptComponent {
     if (!this.leftDown) {
       this.processImage();
     }
+        
   };
 
+  //modify method to do red vs green text for if object is EVIL vs GOOD
   private loadCaption(text: string) {
     //position caption 5cm above top of box formed by circles
     var topCenterPos = this.circleTrans[0]
@@ -122,6 +128,26 @@ export class PictureBehavior extends BaseScriptComponent {
     var captionRot = this.picAnchorTrans.getWorldRotation();
     this.caption.openCaption(text, captionPos, captionRot);
   }
+    
+    //only loads an alternative website for EVIL objects, not good ones.
+    private loadWebsite(text: string) {
+         var topCenterPos = this.circleTrans[0]
+          .getWorldPosition()
+          .add(this.circleTrans[1].getWorldPosition())
+          .uniformScale(0.5);
+         var pos = topCenterPos.add(this.picAnchorTrans.up.uniformScale(1)); //1.5
+         var rot = this.picAnchorTrans.getWorldRotation();
+         if (text === "plastic bottle") {
+            this.webView.goToUrl("https://google.com");
+            this.webView.getTransform().setWorldPosition(pos);
+            
+            this.webView.getTransform().setWorldRotation(rot);
+            this.webView.getTransform().setWorldScale(vec3.one().uniformScale(0.5));
+         }
+        
+        
+        
+    }
 
   private processImage() {
     if (this.updateEvent != null) {
@@ -141,12 +167,13 @@ export class PictureBehavior extends BaseScriptComponent {
       //remove update loop and process image
       this.loadingObj.enabled = true;
       this.cropRegion.enabled = false;
-
-      this.chatGPT.makeImageRequest(
+      this.loadWebsite("plastic bottle");
+      this.plasticDetection.makeImageRequest(
         this.captureRendMesh.mainPass.captureImage,
         (response) => {
           this.loadingObj.enabled = false;
-          this.loadCaption(response);
+//          this.loadCaption(response);
+//          this.loadWebsite(response);
         }
       );
     }

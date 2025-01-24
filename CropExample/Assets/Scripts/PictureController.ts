@@ -6,6 +6,7 @@ export class PictureController extends BaseScriptComponent {
 
   private isEditor = global.deviceInfoSystem.isEditor();
 
+    
   private rightHand = SIK.HandInputData.getHand("right");
   private leftHand = SIK.HandInputData.getHand("left");
 

@@ -12,6 +12,7 @@ export class CaptionBehavior extends BaseScriptComponent {
   private scaleCancel: CancelSet = new CancelSet();
 
   onAwake() {
+        
     this.trans = this.getSceneObject().getTransform();
     this.scaleTrans = this.scaleObj.getTransform();
     this.scaleTrans.setLocalScale(vec3.zero());

@@ -1,16 +1,16 @@
 studioVersion:
   major: 5
   minor: 4
-  patch: 0
-  build: 24121706
+  patch: 1
+  build: 24123021
   type: Public
 updateCheckpoint: 52
 sceneId: 0a1ccb1a-fe88-4fbb-9883-e3af3c75fd99
 viewConfig:
   simulation:
-    device: Spectacles (2024)
-    cameraFov: nan
-    fullFrameAspect: 0.666660
+    device: No Simulation
+    cameraFov: 66.519997
+    fullFrameAspect: nan
     viewport: Maximized
     output: Live
     stereoOutputEye: Center
@@ -21,7 +21,7 @@ metaInfo:
     []
   tags:
     []
-  lensName: CropExample
+  lensName: CropExample4
   lensDescriptors:
     - EXPERIMENTAL_API
   lensApplicability:

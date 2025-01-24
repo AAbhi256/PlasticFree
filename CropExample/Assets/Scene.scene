@@ -5,8 +5,8 @@
     - !<own> 02cb53bf-e788-4c82-a2b8-f9301f7f2203
     - !<own> 0005641c-028d-459a-0000-000000014b4d
     - !<own> c40411fe-69a7-45fa-88dd-61a4550224a0
-    - !<own> fd90a2f8-88e2-450a-b523-6bf58bfb55ee
     - !<own> 3f2b6956-2aad-451e-9555-fe237a9f8383
+    - !<own> fd90a2f8-88e2-450a-b523-6bf58bfb55ee
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -366,6 +366,26 @@
     - !<own> b487610e-aa1a-46a1-8bc4-d92a0181b3ce
   Components:
     []
+- !<RenderMeshVisual/074dbb1e-75ce-4378-a524-81e7778ed6d0>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: false
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    []
+  Mesh: !<reference> 00000000-0000-0000-0000-000000000000
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<ScriptComponent/0b3315a6-57ce-4f74-a213-cd4cf017a99f>
   PrefabRemaps:
     []
@@ -1113,6 +1133,28 @@
     - !<own> 73962c2a-4f91-468e-b5d0-ed3004aca27c
   Components:
     []
+- !<ScriptComponent/42507fbb-7734-4d4c-a9a5-011d5187ca26>
+  PrefabRemaps:
+    []
+  Name: WebView
+  Enabled: true
+  ScriptAsset: !<reference> c3f0c1b7-3bcd-436a-9727-a725cf205970
+  ScriptInputsDefault:
+    url: true
+    resolution: true
+    userAgent: true
+    poke: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      url: "https://snapchat.com"
+      resolution: !<Vec2> {x: 600.000000, y: 800.000000}
+      userAgent: ""
+      poke: true
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/476d40ab-30ab-4613-a3f2-fdacdd16fb8c>
   PrefabRemaps:
     []
@@ -1199,6 +1241,22 @@
   Components:
     - !<own> 0b3315a6-57ce-4f74-a213-cd4cf017a99f
     - !<own> f218e099-db68-4df0-bc77-4dec63632388
+- !<SceneObject/4f5da557-0076-4f50-9f41-26855168010b>
+  PrefabRemaps:
+    []
+  Name: AlternativeWebsite
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 60.000000, y: 80.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 42507fbb-7734-4d4c-a9a5-011d5187ca26
+    - !<own> 074dbb1e-75ce-4378-a524-81e7778ed6d0
 - !<SceneObject/4f9a07b9-0545-4202-9ae5-cbececc6754c>
   PrefabRemaps:
     []
@@ -1567,7 +1625,7 @@
 - !<ScriptComponent/65938027-d818-4923-8afa-8b3b06f5c4a9>
   PrefabRemaps:
     []
-  Name: ChatGPT
+  Name: PlasticDetection
   Enabled: true
   ScriptAsset: !<reference> d5ef2a51-66a4-4fda-93c0-d094de949e4b
   ScriptInputsDefault:
@@ -1679,6 +1737,7 @@
   PrefabRemaps:
     - 04115d58-898d-460b-a962-1b54aac85c39: 30426221-d802-459e-8d23-560b36685b03
     - 0508f08b-3205-4034-80b9-9a76cb9fc365: c893d1ed-e112-44f5-a2c0-3157c9c3c754
+    - 074dbb1e-75ce-4378-a524-81e7778ed6d0: 26c2511f-dc76-4cca-9a72-884b7369bcf4
     - 0a33076e-a567-49a0-9a6e-ff274d352bd2: c5863168-1e26-40db-9bab-34a1316b1dca
     - 1bfae5a9-1d62-4b7a-9a2a-03effcd593ac: 3421453f-ec56-434f-9be7-5f786f76b39d
     - 1c2098d5-42a4-410f-96f3-23473891d53c: 8828bf73-8b2a-4b77-8f1e-9f59303e93ad
@@ -1690,7 +1749,9 @@
     - 3ded3b35-c637-4418-9dfa-c9873eda7dde: 3a22dc3e-a255-4660-9ee4-ac588b67814c
     - 4055921d-74e7-4e3d-9ace-2780de381b84: 33075d74-7257-4525-908c-ccb4da70a7c2
     - 41a5258f-f59b-4df6-a045-27d1e009e828: 874c035d-aa50-4359-9f50-03543dc34bb1
+    - 42507fbb-7734-4d4c-a9a5-011d5187ca26: 3da0cc4f-de42-4f39-a8bc-1fdcfe040a7d
     - 47973271-a98c-4923-983b-738f19df9605: f1049bf5-5da3-4ba0-846e-0e5b4207150a
+    - 4f5da557-0076-4f50-9f41-26855168010b: 98417d5e-88c8-4814-9e75-ceae90ea5cd0
     - 58ffcb1c-8e71-4cf3-9b84-095f6b5cc1e4: c0b7da4f-360f-417d-8a3c-ac85637e4f92
     - 5bd2161d-a5b7-4e48-8daa-05d5533346b3: 890de5e6-20c2-43e6-8732-0b9f5c775584
     - 6ea9f37c-1697-46c3-acff-27a8848c8588: 0b973e4c-c82c-4b12-9f20-937f5639ee6f
@@ -1740,6 +1801,7 @@
     - !<own> b930990a-525e-4f9f-973d-0f0a4a974cae
     - !<own> 32033dda-17a3-4e6b-a73a-39a8a2abf0da
     - !<own> 6efe5be6-1142-4602-ac4b-64c32adbfa82
+    - !<own> 4f5da557-0076-4f50-9f41-26855168010b
   Components:
     - !<own> 75a511cb-cfd0-416c-a189-b5e4d78f77de
 - !<SceneObject/6fc31a5e-4dd7-4137-a88f-851933f75f16>
@@ -1840,8 +1902,9 @@
       captureRendMesh: !<reference.RenderMeshVisual> 1bfae5a9-1d62-4b7a-9a2a-03effcd593ac
       screenCropTexture: !<reference.Texture> cd12b01a-61d6-4671-bba2-6c3bde1a9812
       cropRegion: !<MappingBased.CropRegion> cc57f8ef-c919-4afe-a404-cc3a800e9a36
-      chatGPT: !<MappingBased.ChatGPT> 65938027-d818-4923-8afa-8b3b06f5c4a9
+      plasticDetection: !<MappingBased.PlasticDetection> 65938027-d818-4923-8afa-8b3b06f5c4a9
       caption: !<MappingBased.CaptionBehavior> 8c7a252f-124d-4a50-a783-c957e8d30a72
+      webView: !<MappingBased.WebView> 42507fbb-7734-4d4c-a9a5-011d5187ca26
   ScriptTypes:
     "":
       {}
@@ -3261,7 +3324,7 @@
 - !<SceneObject/fd90a2f8-88e2-450a-b523-6bf58bfb55ee>
   PrefabRemaps:
     []
-  Name: ChatGPT
+  Name: PlasticDetection
   Enabled: true
   Layers: 1
   LocalTransform:

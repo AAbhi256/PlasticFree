@@ -28,13 +28,14 @@
   ScriptInputsHidden:
     caption: false
     captureRendMesh: false
-    chatGPT: false
     circleObjs: false
     cropRegion: false
     editorCamObj: false
     loadingObj: false
     picAnchorObj: false
+    plasticDetection: false
     screenCropTexture: false
+    webView: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
@@ -45,9 +46,10 @@
       screenCropTexture: !<reference.Texture> 00000000-0000-0000-0000-000000000000
       editorCamObj: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       cropRegion: !<MappingBased.CropRegion> 00000000-0000-0000-0000-000000000000
-      chatGPT: !<MappingBased.ChatGPT> 00000000-0000-0000-0000-000000000000
       caption: !<MappingBased.CaptionBehavior> 00000000-0000-0000-0000-000000000000
       loadingObj: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      plasticDetection: !<MappingBased.PlasticDetection> 00000000-0000-0000-0000-000000000000
+      webView: !<MappingBased.WebView> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -59,5 +61,6 @@
     - // @input Component.RenderMeshVisual captureRendMesh
     - // @input Asset.Texture screenCropTexture
     - // @input CropRegion cropRegion
-    - // @input ChatGPT chatGPT
+    - // @input PlasticDetection plasticDetection
     - // @input CaptionBehavior caption
+    - // @input WebView webView
