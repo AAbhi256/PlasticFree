@@ -7,6 +7,7 @@ export class CameraService extends BaseScriptComponent {
   @input deviceCamTexture: Texture;
   @input camModule: CameraModule;
 
+    
   private isEditor = global.deviceInfoSystem.isEditor();
   private camTexture = null;
   private cropProvider = null;

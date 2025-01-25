@@ -42,7 +42,7 @@ export class PlasticDetection extends BaseScriptComponent {
     
   async sendVisionModel(image64: string, callback: (response: string) => void) {
         const webRequest = new Request(
-              "https://077f-192-54-222-158.ngrok-free.app/identify",
+              "https://b529-192-54-222-158.ngrok-free.app/identify",
               {
                 method: "POST",
                 headers: {

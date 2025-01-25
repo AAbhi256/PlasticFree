@@ -21,7 +21,7 @@ metaInfo:
     []
   tags:
     []
-  lensName: CropExample4
+  lensName: Turtles
   lensDescriptors:
     - EXPERIMENTAL_API
   lensApplicability:
@@ -30,7 +30,7 @@ metaInfo:
   lensClientCompatibilities:
     - Spectacles
   platformBundlesEnabled: false
-  iconHash: ""
+  iconHash: 5fb5667a14d7653f642b12908493cb6f
   videoPreviewHash: ""
   fromTemplateName: Default
   fromTemplateUrl: Lens Studio 5.4.0.24110404

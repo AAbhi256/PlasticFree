@@ -135,7 +135,7 @@ export class PictureBehavior extends BaseScriptComponent {
           .getWorldPosition()
           .add(this.circleTrans[1].getWorldPosition())
           .uniformScale(0.5);
-         var pos = topCenterPos.add(this.picAnchorTrans.up.uniformScale(1)); //1.5
+         var pos = topCenterPos.add(this.picAnchorTrans.right.uniformScale(35)); //1.5
          var rot = this.picAnchorTrans.getWorldRotation();
          if (text === "plastic bottle") {
             this.webView.goToUrl("https://google.com");
@@ -145,9 +145,9 @@ export class PictureBehavior extends BaseScriptComponent {
             this.webView.getTransform().setWorldScale(vec3.one().uniformScale(0.5));
          }
         
-        
-        
     }
+    
+
 
   private processImage() {
     if (this.updateEvent != null) {
@@ -172,8 +172,8 @@ export class PictureBehavior extends BaseScriptComponent {
         this.captureRendMesh.mainPass.captureImage,
         (response) => {
           this.loadingObj.enabled = false;
-//          this.loadCaption(response);
-//          this.loadWebsite(response);
+          //this.loadCaption(response);
+          //this.loadWebsite(response);
         }
       );
     }

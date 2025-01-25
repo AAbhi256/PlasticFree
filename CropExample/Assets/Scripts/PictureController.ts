@@ -67,7 +67,8 @@ export class PictureController extends BaseScriptComponent {
     );
   }
 
-  createScanner() {
+  async createScanner() {
     var scanner = this.scannerPrefab.instantiate(this.getSceneObject());
+        
   }
 }

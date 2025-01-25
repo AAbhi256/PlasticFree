@@ -6,6 +6,7 @@ export class CaptionBehavior extends BaseScriptComponent {
   @input scaleObj: SceneObject;
 
   private trans: Transform;
+    
   private scaleTrans: Transform;
   private startPos: vec3;
 
