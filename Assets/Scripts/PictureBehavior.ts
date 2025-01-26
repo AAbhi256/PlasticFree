@@ -171,6 +171,10 @@ export class PictureBehavior extends BaseScriptComponent {
 
   onImageRequestSuccess(context, response, productPage, webView) {
       context.loadingObj.enabled = false;
+      if (response.name === "other") {
+        context.loadCaption("plastic free!");
+        return
+      }
       if (response.urls && response.urls.length > 0) {
         // context.product1.enabled = false;
       }
@@ -186,7 +190,7 @@ export class PictureBehavior extends BaseScriptComponent {
         var rot = this.picAnchorTrans.getWorldRotation();
         productPage.getTransform().setWorldPosition(pos);
         productPage.getTransform().setWorldRotation(rot);
-        productPage.getTransform().lookAt(this.camTrans);
+
       }
       //   this.loadWebsite(response.url)
   }

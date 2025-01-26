@@ -26,15 +26,24 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
+    allIcons: false
     desc1: false
+    desc2: false
     icon1: false
+    icon2: false
     webButton1: false
+    webButton2: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
     - webButton1: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       icon1: ""
       desc1: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      webButton2: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      icon2: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      desc2: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      allIcons: !<reference.Texture[]>
+        []
   ScriptTypes:
     -
       {}
@@ -42,3 +51,7 @@
     - // @input SceneObject webButton1
     - // @input Component.Image icon1
     - // @input Component.Text desc1
+    - // @input SceneObject webButton2
+    - // @input Component.Image icon2
+    - // @input Component.Text desc2
+    - "// @input Asset.Texture[] allIcons"

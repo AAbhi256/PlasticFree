@@ -68,13 +68,14 @@ export class PlasticDetection extends BaseScriptComponent {
               this.webView.enabled = true;
               const productPageType = ProductPage.getTypeName()
               const pageComponent = this.productPage.getComponent(productPageType);
-              pageComponent.setInfo(this.webView, bodyJson.urls[0].url, bodyJson.urls[0].desc, "")
+              pageComponent.setInfo(this.webView, bodyJson.urls[0].url, bodyJson.urls[0].desc, bodyJson.urls[0].icon, bodyJson.urls[1].url, bodyJson.urls[1].desc, bodyJson.urls[1].icon)
 
               callback(bodyJson, this.productPage, this.webView);
               print(bodyJson.name);
             } else {
               this.productPage.enabled = false;
               this.webView.enabled = false;
+              callback(bodyJson, null, null)
             }
           }
           else {

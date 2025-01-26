@@ -3653,6 +3653,16 @@
       webButton1: !<reference.SceneObject> d831f924-1027-47ca-872e-daf7d8490107
       icon1: !<reference.Image> 567c4a3a-b427-4763-a40b-62117a79bc08
       desc1: !<reference.Text> 85a450de-c729-43f2-b389-705d946979c2
+      webButton2: !<reference.SceneObject> 67db66f3-d3f1-401c-919b-5f70b247799b
+      icon2: !<reference.Image> 3525f479-dca9-47ff-a28a-2efc7e43a560
+      desc2: !<reference.Text> 89613b2f-9edb-44b1-bd7e-87aadb5af079
+      allIcons: !<reference.Texture[]>
+        - !<reference> e5be5d70-419d-44a9-83cc-38f4b20dc978
+        - !<reference> 1ae311f0-22b7-4379-9134-5d9878b61d39
+        - !<reference> 936082c0-6052-4cf2-9dbd-462b49f7c965
+        - !<reference> 0eae1169-16ea-4902-ad31-8fc621fbeab6
+        - !<reference> f137a43d-6e86-4a95-a7c4-a537adc1be11
+        - !<reference> 9d109d78-212a-4fd1-92d6-12ec96ab7e69
   ScriptTypes:
     "":
       {}
