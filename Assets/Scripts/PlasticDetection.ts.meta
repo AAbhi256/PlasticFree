@@ -26,13 +26,19 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
+    productPage: false
     remoteServiceModule: false
+    webView: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
     - remoteServiceModule: !<reference.RemoteServiceModule> 00000000-0000-0000-0000-000000000000
+      productPage: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      webView: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input Asset.RemoteServiceModule remoteServiceModule
+    - // @input SceneObject productPage
+    - // @input SceneObject webView

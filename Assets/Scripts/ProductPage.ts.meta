@@ -1,0 +1,44 @@
+- !<AssetImportMetadata/25dc8dae-0e72-4683-865f-600883cce914>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 70208edd-7acf-4891-b8fd-2c7cdd62b798
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 70208edd-7acf-4891-b8fd-2c7cdd62b798
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> f7df77ce-6c8d-4bf5-9685-9ef16987cbec
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/7b73a4e5-c8f2-4508-b8fa-d5cb4d8da4b5>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/f7df77ce-6c8d-4bf5-9685-9ef16987cbec>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    desc1: false
+    icon1: false
+    webButton1: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - webButton1: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      icon1: ""
+      desc1: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject webButton1
+    - // @input Component.Image icon1
+    - // @input Component.Text desc1

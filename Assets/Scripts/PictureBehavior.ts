@@ -73,7 +73,7 @@ export class PictureBehavior extends BaseScriptComponent {
           ProceduralTextureProvider.createFromTexture(this.screenCropTexture);
         this.plasticDetection.makeImageRequest(
           this.captureRendMesh.mainPass.captureImage,
-          (res) => this.onImageRequestSuccess(this, res)
+          (res, page, webView) => this.onImageRequestSuccess(this, res, page, webView)
         );
       });
       delayedEvent.reset(0.1);
@@ -162,21 +162,32 @@ export class PictureBehavior extends BaseScriptComponent {
       this.cropRegion.enabled = false;
       this.plasticDetection.makeImageRequest(
         this.captureRendMesh.mainPass.captureImage,
-        (res) => {
-          this.onImageRequestSuccess(this, res)
+        (res, productPage, webView) => {
+          this.onImageRequestSuccess(this, res, productPage, webView)
         }
       );
     }
   }
 
-  onImageRequestSuccess(context, response) {
+  onImageRequestSuccess(context, response, productPage, webView) {
       context.loadingObj.enabled = false;
       if (response.urls && response.urls.length > 0) {
         // context.product1.enabled = false;
       }
       if (response.name)
         context.loadCaption(response.name);
-      // if (response.urls)
+      if (response.urls)
+      {
+        var topCenterPos = this.circleTrans[0]
+          .getWorldPosition()
+          .add(this.circleTrans[1].getWorldPosition())
+          .uniformScale(0.5);
+        var pos = topCenterPos.add(this.picAnchorTrans.right.uniformScale(20));
+        var rot = this.picAnchorTrans.getWorldRotation();
+        productPage.getTransform().setWorldPosition(pos);
+        productPage.getTransform().setWorldRotation(rot);
+        productPage.getTransform().lookAt(this.camTrans);
+      }
       //   this.loadWebsite(response.url)
   }
 

@@ -1,11 +1,15 @@
+import {Interactable} from "../SpectaclesInteractionKit/Components/Interaction/Interactable/Interactable";
+import {ProductPage} from "./ProductPage";
+import {WebView} from "../Web View/WebView";
+
 @component
 export class PlasticDetection extends BaseScriptComponent {
   @input remoteServiceModule: RemoteServiceModule;
+  @input productPage: SceneObject;
+  @input webView: SceneObject;
 
   private ImageQuality = CompressionQuality.HighQuality;
   private ImageEncoding = EncodingType.Jpg;
-
-  onAwake() {}
 
   //in typescript, type comes after the var name, so our var here is imageTex of type Texture
   makeImageRequest(imageTex: Texture, callback) {
@@ -40,7 +44,7 @@ export class PlasticDetection extends BaseScriptComponent {
     
     
     
-  async sendVisionModel(image64: string, callback: (response: string) => void) {
+  async sendVisionModel(image64: string, callback: (response: string, productPage: SceneObject, webView: SceneObject) => void) {
         const webRequest = new Request(
               "https://9b58-192-54-222-158.ngrok-free.app/identify",
               {
@@ -58,8 +62,20 @@ export class PlasticDetection extends BaseScriptComponent {
           if (resp.status == 200) {
             let bodyText = await resp.text();
             var bodyJson = JSON.parse(bodyText);
-            callback(bodyJson);
-            print(bodyJson.name);
+
+            if (bodyJson.name != "other" && bodyJson.urls && bodyJson.urls.length > 0) {
+              this.productPage.enabled = true;
+              this.webView.enabled = true;
+              const productPageType = ProductPage.getTypeName()
+              const pageComponent = this.productPage.getComponent(productPageType);
+              pageComponent.setInfo(this.webView, bodyJson.urls[0].url, bodyJson.urls[0].desc, "")
+
+              callback(bodyJson, this.productPage, this.webView);
+              print(bodyJson.name);
+            } else {
+              this.productPage.enabled = false;
+              this.webView.enabled = false;
+            }
           }
           else {
             print("error code: " + resp.status);
