@@ -1,0 +1,38 @@
+studioVersion:
+  major: 5
+  minor: 4
+  patch: 1
+  build: 24123021
+  type: Public
+updateCheckpoint: 52
+sceneId: 0a1ccb1a-fe88-4fbb-9883-e3af3c75fd99
+viewConfig:
+  simulation:
+    device: Spectacles (2024)
+    cameraFov: nan
+    fullFrameAspect: 0.666660
+    viewport: Maximized
+    output: Live
+    stereoOutputEye: Center
+    deviceTypeOverride: Unknown
+  cameraType: Front
+metaInfo:
+  hints:
+    []
+  tags:
+    []
+  lensName: Turtles
+  lensDescriptors:
+    - EXPERIMENTAL_API
+  lensApplicability:
+    - Front
+    - Back
+  lensClientCompatibilities:
+    - Spectacles
+  platformBundlesEnabled: false
+  iconHash: 5fb5667a14d7653f642b12908493cb6f
+  videoPreviewHash: ""
+  fromTemplateName: Default
+  fromTemplateUrl: Lens Studio 5.4.0.24110404
+  activationCamera: Front
+  sourceMapEnabled: false
