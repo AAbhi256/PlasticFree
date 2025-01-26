@@ -171,7 +171,7 @@ export class PictureBehavior extends BaseScriptComponent {
 
   onImageRequestSuccess(context, response, productPage, webView) {
       context.loadingObj.enabled = false;
-      if (response.name === "other") {
+      if (productPage == null || response.name === "other") {
         context.loadCaption("plastic free!");
         return
       }

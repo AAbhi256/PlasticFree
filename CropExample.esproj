@@ -15,7 +15,7 @@ viewConfig:
     output: Live
     stereoOutputEye: Center
     deviceTypeOverride: Unknown
-  cameraType: Front
+  cameraType: Back
 metaInfo:
   hints:
     []
@@ -25,14 +25,14 @@ metaInfo:
   lensDescriptors:
     - EXPERIMENTAL_API
   lensApplicability:
-    - Front
     - Back
   lensClientCompatibilities:
+    - Mobile
     - Spectacles
   platformBundlesEnabled: false
   iconHash: 5fb5667a14d7653f642b12908493cb6f
   videoPreviewHash: ""
   fromTemplateName: Default
   fromTemplateUrl: Lens Studio 5.4.0.24110404
-  activationCamera: Front
+  activationCamera: Rear
   sourceMapEnabled: false

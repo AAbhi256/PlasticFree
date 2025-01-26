@@ -1,0 +1,68 @@
+- !<AssetImportMetadata/b08cd57e-7a1f-4172-a8ab-13dc7171ce73>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 66040b20-a9c2-4da9-b6eb-2daa06e02509
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 66040b20-a9c2-4da9-b6eb-2daa06e02509
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 443487b5-cb1c-4315-a6c8-a35e753a024b
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/2641f5eb-67c2-4639-a167-336e75b09cfb>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/443487b5-cb1c-4315-a6c8-a35e753a024b>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    instructions: false
+    introScreen1: false
+    introScreen2: false
+    introScreen3: false
+    introScreen4: false
+    nextButton: false
+    screen1Button: false
+    screen2Button: false
+    screen3Button: false
+    startButton: false
+    startScreen: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - startScreen: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      introScreen1: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      introScreen2: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      introScreen3: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      introScreen4: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      instructions: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      startButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      nextButton: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      screen1Button: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      screen2Button: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      screen3Button: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject startScreen
+    - // @input SceneObject introScreen1
+    - // @input SceneObject introScreen2
+    - // @input SceneObject introScreen3
+    - // @input SceneObject introScreen4
+    - // @input SceneObject instructions
+    - // @input SceneObject startButton
+    - // @input SceneObject nextButton
+    - // @input SceneObject screen1Button
+    - // @input SceneObject screen2Button
+    - // @input SceneObject screen3Button
